@@ -24,16 +24,16 @@
   "scripts": {
     "build:esm": "babel src -d lib/es --env-name esm",
     "build:cjs": "babel src -d lib --delete-dir-on-start",
-    "build": "yarn build:cjs && yarn build:esm",
-    "deploy-docs": "yarn --cwd www build --prefix-paths && gh-pages -d www/public",
+    "build": "npm run build:cjs && npm run build:esm",
+    "deploy-docs": "npm --cwd www build --prefix-paths && gh-pages -d www/public",
     "precommit": "lint-staged",
-    "prepublishOnly": "yarn build",
-    "start": "yarn --cwd www start",
+    "prepublishOnly": "npm build",
+    "start": "npm --cwd www start",
     "lint": "eslint 'www/*.js' www/src src test '*.js'",
     "release": "rollout",
     "tdd": "karma start",
-    "test": "yarn lint && yarn testonly",
-    "testonly": "yarn tdd --single-run"
+    "test": "npm lint && npm testonly",
+    "testonly": "npm tdd --single-run"
   },
   "lint-staged": {
     "*.js": [
@@ -85,7 +85,7 @@
     "eslint-plugin-react": "^7.12.4",
     "gh-pages": "^2.0.1",
     "husky": "^1.3.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "karma": "^4.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
