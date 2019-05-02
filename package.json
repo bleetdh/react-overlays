@@ -26,7 +26,6 @@
     "build:cjs": "babel src -d lib --delete-dir-on-start",
     "build": "npm run build:cjs && npm run build:esm",
     "deploy-docs": "npm --cwd www build --prefix-paths && gh-pages -d www/public",
-    "precommit": "lint-staged",
     "prepublishOnly": "npm build",
     "start": "npm --cwd www start",
     "lint": "eslint 'www/*.js' www/src src test '*.js'",
